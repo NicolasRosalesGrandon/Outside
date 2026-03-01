@@ -1,3 +1,4 @@
+/* Variables de Diseño - Estética Streetwear Premium */
 :root {
     --bg-color: #ffffff;
     --text-color: #000000;
@@ -25,6 +26,7 @@ body {
     overflow-x: hidden;
 }
 
+/* --- Navegación --- */
 #navbar {
     position: fixed;
     top: 0;
@@ -89,6 +91,7 @@ body {
     opacity: 0.5;
 }
 
+/* --- Hero Section --- */
 .hero {
     height: 100vh;
     width: 100%;
@@ -146,6 +149,7 @@ body {
     background-color: #ffffff;
 }
 
+/* --- Marquee --- */
 .marquee-container {
     background-color: var(--text-color);
     color: white;
@@ -171,6 +175,7 @@ body {
     to { transform: translateX(-50%); }
 }
 
+/* --- Lookbook (Bento) --- */
 .lookbook-section {
     padding: 10rem 4rem;
     max-width: 1400px;
@@ -243,6 +248,7 @@ body {
     letter-spacing: 1px;
 }
 
+/* --- Tienda --- */
 .shop-section {
     padding: 10rem 4rem;
     background-color: #fff;
@@ -298,6 +304,7 @@ body {
 .product-info h3 { font-size: 0.9rem; letter-spacing: 1px; margin-bottom: 0.5rem; }
 .product-info p { font-weight: 900; font-size: 1.1rem; }
 
+/* --- Cinta Tren (Carousel) --- */
 .infinite-carousel-section {
     width: 100%;
     padding: 5rem 0;
@@ -325,6 +332,7 @@ body {
     100% { transform: translateX(calc(-400px * 5 - 7.5rem)); }
 }
 
+/* --- Filosofía Premium --- */
 .about-video-section {
     position: relative;
     height: 100vh;
@@ -379,6 +387,7 @@ body {
 .about-content p { font-size: 1.2rem; line-height: 1.8; margin-bottom: 4rem; font-weight: 300; }
 .btn-premium { background: white; color: black; border: none; padding: 1.5rem 3.5rem; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; }
 
+/* --- Bloques Híbridos --- */
 .hybrid-section {
     display: flex;
     min-height: 90vh;
@@ -416,6 +425,7 @@ body {
 
 .text-content-wrapper p { font-size: 1.2rem; line-height: 1.8; color: #444; }
 
+/* --- Final Shot & Footer --- */
 .final-shot-section { width: 100%; background-color: #000; }
 .final-image-container { position: relative; width: 100%; height: 110vh; overflow: hidden; }
 .final-image { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.8); }
@@ -429,6 +439,7 @@ footer { background-color: #000; color: #fff; padding: 8rem 4rem 4rem; text-alig
 .social-footer a:hover { opacity: 0.5; }
 .copyright { font-size: 0.7rem; color: #555; letter-spacing: 2px; }
 
+/* --- Animaciones de Entrada --- */
 .fade-in {
     opacity: 0;
     transform: translateY(50px);
@@ -440,19 +451,53 @@ footer { background-color: #000; color: #fff; padding: 8rem 4rem 4rem; text-alig
     transform: translateY(0);
 }
 
+/* --- RESPONSIVE DESIGN (Optimizado para Samsung S25) --- */
 @media (max-width: 1024px) {
-    .hybrid-section { flex-direction: column; min-height: auto; }
-    .hybrid-image-container { width: 100%; height: 60vh; }
-    .hybrid-text-container { padding: 4rem 2rem; text-align: center; }
-    .hybrid-line-left, .hybrid-line-right { margin: 0 auto 2rem; }
+    #navbar { padding: 1rem 2rem; }
+    
+    .hybrid-section { 
+        flex-direction: column !important; 
+        min-height: auto; 
+    }
+    
+    .hybrid-image-container { 
+        width: 100%; 
+        height: 50vh; 
+    }
+    
+    .hybrid-text-container { 
+        padding: 4rem 2rem; 
+        text-align: center; 
+        width: 100%;
+    }
+    
+    .hybrid-line-left, .hybrid-line-right { margin: 0 auto 1.5rem; }
 }
 
 @media (max-width: 768px) {
-    #navbar { padding: 1.5rem 2rem; }
-    .lookbook-section, .shop-section { padding: 6rem 2rem; }
-    .bento-grid { grid-template-columns: 1fr; grid-auto-rows: 450px; }
-    .main-piece { grid-column: span 1; }
-    .about-content h2 { font-size: 2.5rem; }
+    .desktop-nav { display: none; }
+    #navbar { padding: 1rem 1.5rem; }
+    
+    .lookbook-section, .shop-section { padding: 5rem 1.5rem; }
+    
+    .bento-grid { 
+        grid-template-columns: 1fr !important; 
+        grid-auto-rows: 350px; 
+        gap: 1rem;
+    }
+    
+    .main-piece { grid-column: span 1; grid-row: span 1; }
+    
+    .product-grid { 
+        grid-template-columns: 1fr; 
+        gap: 2rem; 
+    }
+    
+    #hero-logo { width: 85vw; }
+    
+    .about-content h2 { font-size: 2.2rem; }
+    .hybrid-text-container h2 { font-size: 2.5rem; }
     .final-overlay h2 { font-size: 3rem; left: 2rem; }
+    
     .social-top { display: none; }
 }
